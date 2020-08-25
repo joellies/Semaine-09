@@ -1,0 +1,33 @@
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@function fonts($font-name) {
+  @return map-get($fonts, $font-name);
+}
+
+$fonts: (
+  main: 'Roboto',
+  secondary: 'Lato',
+);
+
+$colors: (
+  bg-color: black,
+  title-color: yellow,
+  text-color: white,
+  border-color: red,
+);
+
+body {
+  background-color: color(bg-color);
+}
+
+h1 {
+  font-family: fonts(main);
+  color: color(title-color);
+}
+
+p {
+  color: color(text-color);
+  font-family: fonts(secondary);
+}
